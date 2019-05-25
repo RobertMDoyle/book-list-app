@@ -108,10 +108,12 @@ document.getElementById('book-list').addEventListener('click', function(e) {
     const ui = new UI();
 
     // Delete book
-    ui.deleteBook(e.target);
+    if (e.target.className === "delete") {
+        ui.deleteBook(e.target);
 
-    // Show message
-    ui.showAlert('Book Removed!', 'success');
+        // Show message
+        ui.showAlert('Book Removed!', 'success');
+    }
 
     e.preventDefault();
 });
